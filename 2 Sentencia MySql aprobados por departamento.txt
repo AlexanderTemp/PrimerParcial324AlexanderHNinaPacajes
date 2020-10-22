@@ -1,0 +1,31 @@
+///////////Sentencia SQL
+select (select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=1 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) ch,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=2 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) lpz,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=3 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) cb,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=4 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) oru,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=5 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) pt,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=6 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) tj,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=7 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) sc,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=8 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) be,
+(select count(*) from identificador iden,(select iden.ci citemp, avg(nt.nota) prom from notas nt, identificador iden where nt.ci=iden.ci and iden.residencia=9 group by iden.ci) tmp
+where iden.ci=tmp.citemp and tmp.prom>51) pd
+
+////Prueba 2 aprobados en chuquisaca
+select iden.ci, avg(nt.nota) from notas nt, identificador iden where iden.ci=nt.ci and iden.residencia=1 group by iden.ci
+
+/////Prueba 1 aprobado y 1 reprobado la paz
+select iden.ci, avg(nt.nota) from notas nt, identificador iden where iden.ci=nt.ci and iden.residencia=2 group by iden.ci
+
+///////Prueba aprobado potosi
+select iden.ci, avg(nt.nota) from notas nt, identificador iden where iden.ci=nt.ci and iden.residencia=5
+
+//////Prueba reprobado cochabamba
+select iden.ci, avg(nt.nota) from notas nt, identificador iden where iden.ci=nt.ci and iden.residencia=3
